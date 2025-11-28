@@ -386,13 +386,13 @@ main {
 /* Прайс-лист */
 .price-list {
     padding: 3rem 0;
-    background-color: #ff9a9e
+    background-color: #ffffff
 }
 
 .price-list h1 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #ffffff;
+    color: #fd2525;
 }
 
 .price-category {
