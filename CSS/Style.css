@@ -264,7 +264,7 @@ main {
 .promo-header-1 {
     margin-bottom: 3rem;
     padding: 2rem;
-    background: url("/images/Знакомство3.jpg");
+    background: url("../images/Знакомство3.jpg");
     background-size: cover no-repeat center center;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -289,7 +289,7 @@ main {
 .promo-header-2 {
     margin-bottom: 3rem;
     padding: 2rem;
-    background: url("/images/приведиподругу2.jpg");
+    background: url("../images/приведиподругу2.jpg");
     background-size: cover;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
