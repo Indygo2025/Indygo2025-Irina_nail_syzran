@@ -336,6 +336,11 @@ main {
     margin-bottom: 2rem;
     color: #ff6b81;
 }
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
 
 .info-category {
     margin-bottom: 3rem;
