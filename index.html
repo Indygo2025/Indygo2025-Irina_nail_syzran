@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Мастер маникюра и педикюра | Догадина Ирина</title>
     <link rel="stylesheet" href="CSS/Style.css" />
     <link rel="shortcut icon" href="images/favicon.jpg" type="image/png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
     <header>
         <div class="container">
             <h1>Ирина</h1>
-            <!-- <img src="/images/irina-21-2087.gif" alt=""> -->
             <p>Профессиональный мастер маникюра и педикюра</p>
         </div>
     </header>
-
     <nav>
         <div class="container nav-container">
             <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
@@ -33,15 +29,13 @@
             </ul>
         </div>
     </nav>
-
     <main>
         <section class="hero">
             <!-- <img src="images/row.jpg" alt="фон" /> -->
             <div class="container" style="
             background-image: url('/images/row.jpg') no-repeat center center;
             background-size: cover;
-            padding: 4rem 0;
-          ">
+            padding: 4rem 0; ">
                 <h2>Добро пожаловать в мой салон!</h2>
                 <p>Уютная атмосфера, профессиональное оборудование</p>
                 <p>и индивидуальный подход к каждому клиенту</p>
@@ -49,7 +43,6 @@
                 <a href="portfolio.html" class="btn">Посмотреть мои работы</a>
             </div>
         </section>
-
         <section class="about">
             <div class="container">
                 <h2>О мастере</h2>
@@ -86,7 +79,6 @@
                 </div>
             </div>
         </section>
-
         <section class="gallery">
             <div class="container">
                 <h2>Фото салона</h2>
@@ -98,7 +90,6 @@
             </div>
         </section>
     </main>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 Догадина Ирина. Все права защищены.</p>
@@ -112,21 +103,20 @@
     </footer>
     <script>
         // JavaScript для переключения меню
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.getElementById('menuToggle');
             const mainMenu = document.getElementById('mainMenu');
             const menuIcon = menuToggle.querySelector('i');
-            
-            menuToggle.addEventListener('click', function() {
+
+            menuToggle.addEventListener('click', function () {
                 mainMenu.classList.toggle('show');
                 menuIcon.classList.toggle('fa-bars');
                 menuIcon.classList.toggle('fa-times');
             });
-            
             // Закрытие меню при клике на ссылку
             const menuLinks = document.querySelectorAll('.menu a');
             menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function () {
                     mainMenu.classList.remove('show');
                     menuIcon.classList.remove('fa-times');
                     menuIcon.classList.add('fa-bars');
@@ -135,5 +125,4 @@
         });
     </script>
 </body>
-
 </html>

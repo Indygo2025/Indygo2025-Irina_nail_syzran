@@ -54,7 +54,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 1rem 0;
+    padding: 0.5 rem 0;
 }
 
 .nav-container {
@@ -228,6 +228,26 @@ main {
     text-align: justify;
 }
 
+
+
+
+/* Акции */
+
+.actions {
+    padding: 3rem 0;
+    background-color: white;
+}
+
+.actions h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ff6b81;
+}
+
+
+
+
+
 /* Галерея */
 .gallery {
     padding: 3rem 0;
@@ -255,11 +275,17 @@ main {
     transition: transform 0.3s ease;
 }
 
+.foot img:hover {
+    transform: scale(1.05);
+}
+
+/* .ico img:hover {
+    transform: scale(1.05);
+} */
 .gallery-grid img:hover {
     transform: scale(1.05);
 }
 
-/* Акции */
 .promo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -633,7 +659,7 @@ footer a:hover {
     .menu-toggle {
         display: block;
         align-self: flex-end;
-        margin-bottom: 1rem;
+        margin-bottom: 0.1rem;
     }
 
     /* Скрываем меню по умолчанию на мобильных */
@@ -703,15 +729,6 @@ footer a:hover {
 
 .hero h2 {
     font-size: 2rem;
-}
-
-.about-content {
-    flex-direction: column;
-}
-
-.about-content img {
-    width: 100%;
-    height: auto;
 }
 
 .photo-grid {

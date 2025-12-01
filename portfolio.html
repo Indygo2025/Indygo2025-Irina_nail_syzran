@@ -7,6 +7,7 @@
   <title>Мои работы | Догадина Ирина</title>
   <link rel="stylesheet" href="CSS/Style.css" />
   <link rel="shortcut icon" href="images/favicon.jpg" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -17,17 +18,20 @@
     </div>
   </header>
 
-  <nav>
-    <div class="container">
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="stocks.html">Акции</a></li>
-        <li><a href="info.html">Информация</a></li>
-        <li><a href="price.html">Прайс</a></li>
-        <li><a href="portfolio.html" class="active">Мои работы</a></li>
-      </ul>
-    </div>
-  </nav>
+   <nav>
+        <div class="container nav-container">
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu" id="mainMenu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="stocks.html">Акции</a></li>
+                <li><a href="info.html">Информация</a></li>
+                <li><a href="price.html">Прайс</a></li>
+                <li><a href="portfolio.html" class="active">Мои работы</a></li>
+            </ul>
+        </div>
+    </nav>
 
   <main>
     <section class="portfolio">
@@ -101,13 +105,38 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Догадина Ирина. Все права защищены.</p>
-      <p>Мои контакты</p>
-      <a href="https://vk.com/irendogadina"><img src="images/icons8-vk-94.png" alt="Logo VK" /></a>
-      <a href="https://t.me/+50shqZtNLzU1NTJi"><img src="images/icons8-телеграм-94.png" alt="Logo TG" /></a>
-      <a href="mailto:iradogadina84@mail.ru"><img src="images/icons8-почта-94.png" alt="Logo mail" /></a>
-    </div>
+            <p>&copy; 2025 Догадина Ирина. Все права защищены.</p>
+            <p> Мои контакты</p>
+            <div class="foot">
+                <a href="https://vk.com/irendogadina"><img src="images/icons8-vk-94.png" alt="Logo VK"></a>
+                <a href="https://t.me/+50shqZtNLzU1NTJi"><img src="images/icons8-телеграм-94.png" alt="Logo TG"></a>
+                <a href="mailto:iradogadina84@mail.ru"><img src="images/icons8-почта-94.png" alt="Logo mail"></a>
+            </div>
+        </div>
   </footer>
+  <script>
+        // JavaScript для переключения меню
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainMenu = document.getElementById('mainMenu');
+            const menuIcon = menuToggle.querySelector('i');
+
+            menuToggle.addEventListener('click', function () {
+                mainMenu.classList.toggle('show');
+                menuIcon.classList.toggle('fa-bars');
+                menuIcon.classList.toggle('fa-times');
+            });
+            // Закрытие меню при клике на ссылку
+            const menuLinks = document.querySelectorAll('.menu a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mainMenu.classList.remove('show');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

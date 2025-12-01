@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Акции — Ваш Салон | Догадина Ирина</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Акции | Догадина Ирина</title>
     <link rel="stylesheet" href="CSS/Style.css">
     <link rel="shortcut icon" href="images/favicon.jpg" type="image/png" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -17,10 +15,12 @@
             <p>Профессиональный мастер маникюра и педикюра</p>
         </div>
     </header>
-
     <nav>
-        <div class="container">
-            <ul>
+        <div class="container nav-container">
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu" id="mainMenu">
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="stocks.html" class="active">Акции</a></li>
                 <li><a href="info.html">Информация</a></li>
@@ -29,10 +29,12 @@
             </ul>
         </div>
     </nav>
-
     <main>
-        <section class="section">
-            <div class="container">
+        <section class="actions">
+            <div class="container" style="
+            background-image: url('/images/row.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 4rem 0; ">
                 <h2 class="section-title">Горячие акции</h2>
                 <div class="promo-grid">
                     <div class="promo-card">
@@ -46,44 +48,12 @@
                             <!-- <h3>«Знакомство с мастером»</h3> -->
                         </div>
                         <div class="promo-body">
-                            <p>Если пришли в первый раз</p>
+                            <p>Первое посещение</p>
                             <!-- <span class="promo-old-price">2 500 ₽</span> -->
                             <div class="promo-price">- 100 ₽</div>
                             <!-- <a href="#" class="btn">Записаться</a> -->
                         </div>
                     </div>
-
-                    <!-- <div class="promo-card">
-                        <div class="promo-header">
-                            <div class="promo-badge new">НОВИНКА</div>
-                            <h3>«В честь Деня рождения»</h3>
-                        </div>
-                        <div class="promo-body">
-                            <p>Скидка за 3 дня и после</p> -->
-                    <!-- <span class="promo-old-price">3 200 ₽</span> -->
-                    <!-- <div class="promo-price">-150 ₽</div>
-                            <a href="#" class="btn">Записаться</a>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="promo-card">
-                        <div class="promo-header">
-                            <div class="promo-badge">ПОДАРОК</div>
-                            <img src="images/приведи подругу.jpg" alt="Приведи подругу" width="300" height="200">
-                            <div
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
-                                <h3>«Приведи подругу»</h3>
-                            </div>
-                            <div class="promo-body">
-                                <div style="position: relative;">
-                                    <p>Приведи подругу</p>
-                                    <div class="promo-price">-200 ₽</div>
-                                </div>
-                            </div>
-                            <a href="#" class="btn">Подробнее</a>
-                        </div>
-                    </div> -->
-
                     <div class="promo-card">
                         <div>
                             <div class="promo-header-2">
@@ -105,24 +75,42 @@
                     </div>
                 </div>
             </div>
-
-            </div>
-
-            </div>
-            </div>
-            </div>
         </section>
     </main>
-
     <footer>
         <div class="container">
             <p>&copy; 2025 Догадина Ирина. Все права защищены.</p>
-            <p>Мои контакты</p>
-            <a href="https://vk.com/irendogadina"><img src="images/icons8-vk-94.png" alt="Logo VK" /></a>
-            <a href="https://t.me/+50shqZtNLzU1NTJi"><img src="images/icons8-телеграм-94.png" alt="Logo TG" /></a>
-            <a href="mailto:iradogadina84@mail.ru"><img src="images/icons8-почта-94.png" alt="Logo mail" /></a>
+            <p> Мои контакты</p>
+            <div class="foot">
+                <a href="https://vk.com/irendogadina"><img src="images/icons8-vk-94.png" alt="Logo VK"></a>
+                <a href="https://t.me/+50shqZtNLzU1NTJi"><img src="images/icons8-телеграм-94.png" alt="Logo TG"></a>
+                <a href="mailto:iradogadina84@mail.ru"><img src="images/icons8-почта-94.png" alt="Logo mail"></a>
+            </div>
         </div>
     </footer>
+    <script>
+        // JavaScript для переключения меню
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainMenu = document.getElementById('mainMenu');
+            const menuIcon = menuToggle.querySelector('i');
+
+            menuToggle.addEventListener('click', function () {
+                mainMenu.classList.toggle('show');
+                menuIcon.classList.toggle('fa-bars');
+                menuIcon.classList.toggle('fa-times');
+            });
+            // Закрытие меню при клике на ссылку
+            const menuLinks = document.querySelectorAll('.menu a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mainMenu.classList.remove('show');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
