@@ -47,11 +47,21 @@ header img {
 
 /* Навигация */
 nav {
+    display: flex;
+    gap: 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 nav ul {
@@ -63,6 +73,49 @@ nav ul {
 
 nav li {
     margin: 0 1rem;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #e9ecef;
+    color: #000;
+}
+
+.menu a.active {
+    background-color: #d4a574;
+    color: white;
+}
+
+/* Кнопка гамбургера - скрыта по умолчанию */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
 }
 
 nav a {
@@ -336,6 +389,7 @@ main {
     margin-bottom: 2rem;
     color: #ff6b81;
 }
+
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -405,7 +459,7 @@ main {
     padding: 2rem;
     background: url("../images/фон\ Прайс4.jpg");
     background-size: cover;
-   
+
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
@@ -570,33 +624,96 @@ footer a:hover {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul {
+    .nav-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    nav li {
-        margin: 0.5rem 0;
+    /* Показываем кнопку гамбургера на мобильных */
+    .menu-toggle {
+        display: block;
+        align-self: flex-end;
+        margin-bottom: 1rem;
     }
 
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .about-content {
+    /* Скрываем меню по умолчанию на мобильных */
+    .menu {
+        display: none;
         flex-direction: column;
-    }
-
-    .about-content img {
         width: 100%;
-        height: auto;
+        gap: 0.5rem;
     }
 
-    .photo-grid {
-        grid-template-columns: 1fr;
+    /* Показываем меню при активации */
+    .menu.show {
+        display: flex;
     }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu a:last-child {
+        border-bottom: none;
+    }
+
+    /* Улучшаем отступы для мобильных */
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu a {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .menu-toggle {
+        font-size: 1.3rem;
+    }
+}
+
+/* Дополнительные улучшения для мобильной навигации */
+@media (min-width: 769px) {
+    .menu {
+        flex-wrap: wrap;
+    }
+}
+
+/* Плавная анимация для меню */
+.menu {
+    transition: all 0.3s ease;
+}
+
+.menu-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover i {
+    transform: scale(1.1);
+}
+
+.hero h2 {
+    font-size: 2rem;
+}
+
+.about-content {
+    flex-direction: column;
+}
+
+.about-content img {
+    width: 100%;
+    height: auto;
+}
+
+.photo-grid {
+    grid-template-columns: 1fr;
 }

@@ -7,6 +7,7 @@
     <title>Мастер маникюра и педикюра | Догадина Ирина</title>
     <link rel="stylesheet" href="CSS/Style.css" />
     <link rel="shortcut icon" href="images/favicon.jpg" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -19,8 +20,11 @@
     </header>
 
     <nav>
-        <div class="container">
-            <ul>
+        <div class="container nav-container">
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu" id="mainMenu">
                 <li><a href="index.html" class="active">Главная</a></li>
                 <li><a href="stocks.html">Акции</a></li>
                 <li><a href="info.html">Информация</a></li>
@@ -59,7 +63,8 @@
                             Позвольте представиться: я Ирина Догадина - сертифицированный мастер ногтевого сервиса.
                         </p>
                         <p>
-                            В этой профессии работаю уже 2 года. Обожаю это дело и стараюсь делать всё на высшем уровне.
+                            В этой профессии работаю уже 2 года. Обожаю это дело и стараюсь делать всё на высшем
+                            уровне.
                         </p>
                         <p>
                             Представляете, как скучно было бы, если бы я просто красила ногти? Но я не такая! Я
@@ -105,6 +110,30 @@
             </div>
         </div>
     </footer>
+    <script>
+        // JavaScript для переключения меню
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainMenu = document.getElementById('mainMenu');
+            const menuIcon = menuToggle.querySelector('i');
+            
+            menuToggle.addEventListener('click', function() {
+                mainMenu.classList.toggle('show');
+                menuIcon.classList.toggle('fa-bars');
+                menuIcon.classList.toggle('fa-times');
+            });
+            
+            // Закрытие меню при клике на ссылку
+            const menuLinks = document.querySelectorAll('.menu a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainMenu.classList.remove('show');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
